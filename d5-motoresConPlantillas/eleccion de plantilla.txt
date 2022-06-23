@@ -1,0 +1,4 @@
+Entre los tres motores de plantillas utilizaría principalmente EJS,
+ya que la sitaxis es muy similar a HTML, algo que me parece más cómodo de trabajar,
+las incrustaciones de otros archivos parciales me parece más simple que las demás plantillas,
+además de la ventada de incrustar JAVASCRIPT casi casi puro.

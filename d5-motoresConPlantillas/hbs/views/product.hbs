@@ -1,0 +1,10 @@
+{{>add}}
+<h2>Estos son los productos disponibles</h2>
+
+{{#each productos}}
+    <h3>Producto: {{this.title}}</h3>
+    <p>Precio:${{this.price}}</p>
+    <img src="{{this.thumbnail}}" alt="">
+{{/each}}
+
+

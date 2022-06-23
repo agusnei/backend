@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Mi app
+    body
+        nav
+            a(href="http://localhost:8080/api/productos" class="btn btn-dark") Productos
+            br
+            a(href="http://localhost:8080/api/productos/add" class="btn btn-dark") Agregar productos
+        br
+        br
+        h4 Ingresar los datos ndel producto:
+        form(action="/api/productos/add" method="POST")
+            input(type="text" name="title" placeholder="Nombre")
+            br
+            br
+            input(type="number" name="price" placeholder="Precio")
+            br
+            br
+            input(type="text" name="thumbnail" placeholder="URL de imagen")
+            br
+            br
+            input(type="submit" value="Subir producto" class="")
+            input(type="reset" value="Limpiar" class="")
+
