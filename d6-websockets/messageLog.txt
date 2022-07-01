@@ -1,0 +1,44 @@
+[
+	{
+		"username": "aa@bb",
+		"localTs": "30/06/2022 19:04:52",
+		"message": "holis",
+		"id": 1
+	},
+	{
+		"username": "bb@hola",
+		"localTs": "30/06/2022 19:29:08",
+		"message": "hola che",
+		"id": 2
+	},
+	{
+		"username": "bb@hola",
+		"localTs": "30/06/2022 19:29:15",
+		"message": "hola che",
+		"id": 3
+	},
+	{
+		"username": "NN@com.com",
+		"localTs": "30/06/2022 20:31:50",
+		"message": "nuevaprueba",
+		"id": 4
+	},
+	{
+		"username": "NN@com.com",
+		"localTs": "30/06/2022 20:32:29",
+		"message": "nuevaprueba",
+		"id": 5
+	},
+	{
+		"username": "a@asd",
+		"localTs": "30/06/2022 20:57:59",
+		"message": "a",
+		"id": 6
+	},
+	{
+		"username": "a@asd",
+		"localTs": "30/06/2022 21:13:50",
+		"message": "probando de nuevo",
+		"id": 7
+	}
+]
