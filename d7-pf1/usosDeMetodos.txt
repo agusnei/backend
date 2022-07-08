@@ -1,0 +1,70 @@
+---------------------------------------METODOS PARA PRODUCTOS -->     /api/products      -------------------------------------------
+
+                ----metodo POST para agregar productos: url->
+
+                POST localhost:8080/api/products
+                
+                {"name":"BRONCO",
+                "description":"Camioneta",
+                "code":"code",
+                "photo":"https://acroadtrip.blob.core.windows.net/catalogo-imagenes/m/RT_V_5094a44b425b4953a52505a7018e410d.jpg",
+                "price":40000,
+                "stock":10}
+
+                ----metodo GET para ver TODOS los productos: url->
+                
+                GET localhost:8080/api/products
+
+                ----metodo GET para ver TODOS los productos: url->
+
+                        GET localhost:8080/api/products/:id?
+                        
+                        GET localhost:8080/api/products/ev5nttfr7sg1g7dc0p0k
+                        GET localhost:8080/api/products/rjbv0vlgogo1g7dc3v2g
+
+                ----metodo PUT para actualizar el prod por id: url->
+
+                PUT localhost:8080/api/products/:id?
+
+                PUT localhost:8080/api/products/mdgp8c7qjo1g7dc4b10
+                {        "id": "mdgp8c7qjo1g7dc4b10",
+                        "timestamp": 1657232567328,
+                        "name": "RANGER",
+                        "description": "Camioneta",
+                        "code": "code",
+                        "photo": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_57e26e28b95a4620ae3b3dec50fb5a22.jpg",
+                        "price": 50000,
+                        "stock": 10    }
+
+                ----metodo DELETE para eliminar algun prod segun id: url->
+
+                DELETE localhost:8080/api/products/:id?
+
+
+---------------------METODOS PARA CARRITO -->   /api/carts   -----------------------------------------------------------------------------------------
+
+                ---metodo POST para crear un carrito: udrl->
+                        
+                        POST localhost:8080/api/carts
+                        carrito creado b3tuvt52nrg1g7dcl986
+
+                ---metodo GET para mostrar carritos creados
+                        
+                        GET localhost:8080/api/carts
+
+                ---metodo DELETE para vaciar y eliminar un carrito creado:
+                        
+                        DELETE localhost:8080/api/carts/:id
+                        localhost:8080/api/carts/:id
+
+                ---metodo POST para incorporar productos al carro por id de producto y carro:
+                
+                        POST localhost:8080/api/carts/:id/products/:id_prod
+                        localhost:8080/api/carts/COLOCAR EL ID DEL CARRITO/products/COLOCAR EL ID DE ALGUN PRODUCTO
+
+                ---metodo DELETE para eliminar un producto con un idProducto que esta dentro de un carrito con su idCarrito:
+                        
+                        localhost:8080/api/carts/:id/products/:id_prod
+                        localhost:8080/api/carts/COLOCAR EL ID DEL CARRITO A BUSCAR/products/COLOCAR EL ID DE ALGUN PRODUCTO QUE ESTE EN ESE CARRITO PARA ELIMINARLO
+
+
