@@ -1,0 +1,73 @@
+/* Universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bg{
+    background-color: rgb(175, 175, 175);
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+.containerForm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.containerFormMsg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerMessages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+h1 {
+    color: rgb(25, 27, 126);
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem;
+}
+
+h2 {
+    color: rgb(25, 27, 126);
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem;
+}
+
+.msgUser {
+    font-weight: bold;
+    color: blue;
+    size: 1rem;
+}
+
+.msgTs {
+    color: brown;
+    size: 1rem;
+}
+
+.msgMsg {
+    font-style: italic;
+    color: green;
+    size: 1rem;
+}
+
+.msgFormItem {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}

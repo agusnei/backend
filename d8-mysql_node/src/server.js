@@ -1,0 +1,51 @@
+const { Server: IOServer } = require('socket.io');
+const express = require('express');
+const app = express();
+const puerto = 8080;
+const expressServer = app.listen(puerto, (error) => {
+                if (!error) {
+                    console.log(`El servidor se inicio en el puerto ${puerto}`);
+                } else {
+                    console.log(`Error al iniciar el servidor en el puerto ${puerto}. Error ${error}`);
+                }
+            })
+const io = new IOServer(expressServer);
+const routes = require('./routes/index');
+const path = require('path');
+const { Contenedor, Producto } = require('./objects/contenedor');
+//Config DB Connection 
+const productosDB = require('./db/database').mysqlConnection;
+const productosList = new Contenedor(productosDB, 'products');
+const messagesDB = require('./db/database').sqliteConnection;
+const messageLog = new Contenedor(messagesDB, 'messages');
+
+// CONFIG BASICS
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, '../public')));
+app.use('/', routes);
+
+io.on('connection', async socket => {
+    console.log('Nueva conexión: ', socket.id);
+
+    let productos = await productosList.getAll();
+    let messageArray = await messageLog.getAll();
+
+    io.emit('server:productos', productos);
+    
+    socket.on('cliente:producto', async productInfo => {
+        await productosList.save(productInfo);
+        productos = await productosList.getAll();
+
+        io.emit('server:productos', productos);
+    })
+
+    io.emit('server:mensaje', messageArray);
+    
+    socket.on('cliente:mensaje', async messageInfo => {
+        await messageLog.save(messageInfo);
+        messageArray = await messageLog.getAll();
+
+        io.emit('server:mensaje', messageArray);
+    })
+})
